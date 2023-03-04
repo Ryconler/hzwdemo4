@@ -1,0 +1,146 @@
+@import '~@/assets/styles/mixin';
+
+.activities {
+  border-radius: rem(32);
+  background: #ffffff;
+  overflow: hidden;
+  .activitiesTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: rem(94);
+    border: rem(2) solid #ffffff;
+    padding: rem(42) 0 rem(12);
+    background: linear-gradient(180deg, #ffe4de 0%, #fff6f4 24%, #ffffff 79%);
+    i:first-child {
+      width: rem(122);
+      height: rem(32);
+      background: url(~@/assets/images/bg_prize_title_left.png) 0 0 / 100% 100%
+        no-repeat;
+    }
+    i:last-child {
+      width: rem(122);
+      height: rem(32);
+      background: url(~@/assets/images/bg_prize_title_right.png) 0 0 / 100% 100%
+        no-repeat;
+    }
+    h2 {
+      font-size: rem(34);
+      font-weight: bold;
+      text-align: center;
+      color: #262626;
+      line-height: rem(40);
+      margin: 0 rem(12.16);
+    }
+  }
+  .activitiesContent {
+    background: #ffffff;
+    padding: rem(11) 0 rem(34);
+    .activityList {
+      margin-bottom: rem(24);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .activityItem {
+        display: flex;
+        padding: rem(25) rem(36) rem(21) rem(28);
+        .activityImg {
+          flex: none;
+          width: rem(250);
+          height: rem(150);
+          border-radius: rem(20);
+          margin-right: rem(20);
+          object-fit: cover;
+        }
+        .activityInfo {
+          flex: 1;
+          overflow: hidden;
+          .activityName {
+            font-size: rem(30);
+            font-weight: bold;
+            color: #121212;
+            line-height: rem(40);
+            margin-bottom: rem(12);
+            @include ellicpsis;
+          }
+          .activityTime {
+            font-size: rem(24);
+            color: #666666;
+            line-height: rem(28);
+            margin-bottom: rem(12);
+          }
+          .activityDesc {
+            font-size: rem(22);
+            color: #999999;
+            line-height: rem(28);
+            margin-bottom: rem(16);
+            .activityDistance {
+              float: right;
+            }
+          }
+          .activitySignup {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .activityMoney {
+              display: flex;
+              .activityMoneyYen {
+                font-size: rem(24);
+                font-weight: bold;
+                color: #ff397e;
+                line-height: rem(27);
+                margin-top: rem(4);
+                margin-right: rem(2);
+              }
+              .activityMoneyNum {
+                font-size: rem(30);
+                font-weight: bold;
+                color: #ff397e;
+                line-height: rem(33);
+              }
+            }
+            .activitySignupButton {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: rem(126);
+              height: rem(52);
+              font-size: rem(26);
+              font-weight: bold;
+              color: #ffffff;
+              line-height: rem(37);
+              background: url(~@/assets/images/bg_button.png) 0 0/100% 100%
+                no-repeat;
+            }
+          }
+        }
+      }
+      .divider {
+        height: rem(1);
+        background: #eeeeee;
+        margin: rem(4) rem(28);
+      }
+    }
+    .activityMoreButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: rem(541);
+      height: rem(88);
+      background: linear-gradient(180deg, #fff5ee, #ffcdcd 100%);
+      border-radius: rem(44);
+      font-size: rem(28);
+      font-weight: bold;
+      color: #ff2952;
+      line-height: rem(44);
+      margin: 0 auto;
+      i {
+        width: rem(18);
+        height: rem(18);
+        background: url(~@/assets//images/icon_arrow_right_red.png) 0 0/100%
+          100% no-repeat;
+        margin-left: rem(8);
+      }
+    }
+  }
+}

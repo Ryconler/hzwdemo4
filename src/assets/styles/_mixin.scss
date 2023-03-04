@@ -1,0 +1,152 @@
+@function rem($px) {
+    @return $px / 100 + rem
+};
+
+@mixin flex($compony) {
+    flex: $compony;
+};
+
+@mixin flex-space-evenly {
+    display: flex;
+    // justify-content: space-evenly; // 为兼容不支持space-evenly属性的浏览器，采用下面的写法模拟
+    justify-content: space-between; 
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+    }
+};
+
+@mixin border {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+};
+
+@mixin ellicpsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin _prefixDpr($width: 1px, $position: all, $color: #ddd, $radius: 0, $style: solid,  $dpr: 2) {
+  @media only screen and (-webkit-min-device-pixel-ratio:$dpr) {
+      &:before {
+          content: ' ';
+          position: absolute;
+          @if $position == all {
+              left: 0;
+          } @else if $position == top {
+              left: 0;
+          } @else if $position == right{
+              right: 0;
+          } @else if $position == bottom {
+              left: 0;
+              bottom: 0;
+          } @else if $position == left {
+              left: 0;
+          }
+          top: 0;
+          box-sizing: border-box;
+          width: $dpr *100%;
+          height: $dpr *100%;
+          transform: scale(1/$dpr);
+          transform-origin: left top;
+          @if $position == all {
+              border: $width $style $color;
+          } @else {
+              border-#{$position}: $width $style $color;
+          }
+          border-radius: rem($radius * $dpr);
+          pointer-events: none;
+          z-index: 1;
+      }
+  }
+}
+
+@mixin border($position: all, $color: #ddd, $width: 1px,  $radius: 0, $style: solid) {
+    position: relative;
+    @include _prefixDpr($width, $position, $color, $radius, $style, 1);
+    @include _prefixDpr($width, $position, $color, $radius, $style, 1.5);
+    @include _prefixDpr($width, $position, $color, $radius, $style, 2);
+    @include _prefixDpr($width, $position, $color, $radius, $style, 3);
+}
+
+@mixin safe-padding-bottom($x: 0px) {
+  padding-bottom: calc(#{$x} + constant(safe-area-inset-bottom));
+  padding-bottom: calc(#{$x} + env(safe-area-inset-bottom));
+}
+
+@mixin safe-margin-bottom($x: 0px) {
+  margin-bottom: calc(#{$x} + constant(safe-area-inset-bottom));
+  margin-bottom: calc(#{$x} + env(safe-area-inset-bottom));
+}
+
+@mixin safe-margin-top($x: 0px) {
+  margin-top: calc(#{$x} + constant(safe-area-inset-top));
+  margin-top: calc(#{$x} + env(safe-area-inset-top));
+}
+
+@mixin safe-padding-top($x: 0px) {
+  padding-top: calc(#{$x} + constant(safe-area-inset-top));
+  padding-top: calc(#{$x} + env(safe-area-inset-top));
+}
+
+@mixin safeBlock {
+    position:fixed;
+    z-index: 99;
+    bottom:0;
+    height:constant(safe-area-inset-bottom);
+    height:env(safe-area-inset-bottom);
+    width:100%;
+    background:#fff;
+}
+
+@mixin multiEllipsis($multi: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $multi;
+    -webkit-box-orient: vertical;
+}
+
+@mixin popup-scale {
+    animation: scale .3s ease-in-out both;
+}
+
+@mixin popup-up {
+    animation: up .1s ease-out both;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+    25% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

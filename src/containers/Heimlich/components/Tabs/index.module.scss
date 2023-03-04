@@ -1,0 +1,217 @@
+@import '~@/assets/styles/mixin';
+
+.tabs {
+  .tabTitles {
+    position: relative;
+    z-index: 0;
+    .tabTitle.video {
+      width: rem(405);
+      height: rem(96);
+      padding: rem(32) rem(125) rem(19) rem(72);
+      border-radius: rem(32) rem(30) 0 0;
+      background: url(~@/assets/images/bg_tab_title.png) 0 0/100% 100% no-repeat;
+      h2 {
+        text-align: center;
+        font-size: rem(34);
+        font-weight: bold;
+        color: #ff2860;
+        line-height: rem(40);
+      }
+    }
+    .tabTitle.imgtxt {
+      position: absolute;
+      right: 0;
+      width: rem(387);
+      height: rem(128);
+      padding: rem(23) rem(110) rem(63) rem(142);
+      top: rem(8);
+      border-radius: 0 rem(32) 0 0;
+      background: linear-gradient(90deg, #ffe2d6 2%, #ffffff 100%);
+      cursor: pointer;
+      z-index: -1;
+      h2 {
+        text-align: center;
+        font-size: rem(30);
+        font-weight: bold;
+        color: #444444;
+        line-height: rem(42);
+        letter-spacing: rem(1);
+      }
+    }
+  }
+  .tabContents {
+    position: relative;
+    z-index: 0;
+    margin-top: rem(-5);
+    .tabContent {
+      padding: rem(25) rem(26) rem(44);
+      border-radius: 0 rem(28) rem(32) rem(32);
+      background: #ffffff;
+      .teachVideo {
+        position: relative;
+        width: rem(650);
+        height: rem(366);
+        border-radius: rem(20);
+        margin-bottom: rem(40);
+        overflow: hidden;
+        background: #000000;
+        video {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        .cover {
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          .coverImg {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .coverBg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            background: #000000;
+          }
+          .playIcon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: rem(79);
+            height: rem(79);
+            background: url(~@/assets/images/icon_play.png) 0 0/100% 100%
+              no-repeat;
+            cursor: pointer;
+          }
+        }
+      }
+      .badgeWrap {
+        display: flex;
+        margin-bottom: rem(30);
+        .badgeImg {
+          flex: none;
+          position: relative;
+          width: rem(190);
+          height: rem(190);
+          margin-right: rem(18);
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          label {
+            position: absolute;
+            display: block;
+            top: rem(2);
+            left: rem(31);
+            width: rem(82);
+            height: rem(32);
+            &.locked {
+              background: url(~@/assets/images/icon_label_locked.png) 0 0/100%
+                100% no-repeat;
+            }
+            &.unlocked {
+              background: url(~@/assets/images/icon_label_unlocked.png) 0 0/100%
+                100% no-repeat;
+            }
+          }
+        }
+        .badgeInfo {
+          flex: 1;
+          overflow: hidden;
+          .badgeTitle {
+            font-size: rem(34);
+            font-weight: bold;
+            color: #262626;
+            line-height: rem(44);
+            margin-bottom: rem(12);
+          }
+          .badgeGetNum {
+            font-size: rem(28);
+            color: #666666;
+            line-height: rem(40);
+            margin-top: rem(4);
+            margin-bottom: rem(10);
+            em {
+              margin: 0 rem(4);
+              color: #ff397e;
+              font-weight: bold;
+            }
+          }
+          .badgeConditions {
+            .badgeCondition {
+              font-size: rem(24);
+              color: #666666;
+              line-height: rem(40);
+            }
+          }
+        }
+      }
+    }
+  }
+  /* 页面中和页面底部的按钮 */
+  .badgeUnlockButton,
+  .badgeShareButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(630);
+    height: rem(90);
+    margin: 0 auto;
+    font-size: rem(32);
+    font-weight: bold;
+    color: #ffffff;
+    line-height: rem(36);
+    background: url(~@/assets/images/bg_button.gif) 0 0/100% 100% no-repeat;
+  }
+  .badgeShareButton {
+    .shareIcon {
+      width: rem(32);
+      height: rem(34);
+      margin-right: rem(12);
+      background: url(~@/assets/images/icon_share.png) 0 0/100% 100% no-repeat;
+    }
+  }
+  .bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    transform: translateY(100%);
+    transition: all 0.2s ease-in-out;
+    padding-bottom: rem(60);
+    // @include safe-padding-bottom(rem(60));
+    &.fixed {
+      transform: translateY(0);
+    }
+  }
+
+  .fullScreenVideo {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

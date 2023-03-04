@@ -1,0 +1,29 @@
+@import '../../assets/styles/mixin';
+
+.heimlich {
+  background: #7ca3ff;
+  padding-bottom: rem(150);
+  // @include safe-padding-bottom(rem(90));
+  .banner {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .introduction {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: rem(28);
+  }
+  .tabs {
+    margin: 0 rem(24) rem(28);
+  }
+  .prizes {
+    margin: 0 rem(24) rem(28);
+  }
+  .activities {
+    margin: 0 rem(24) rem(28);
+  }
+  .comments {
+  }
+}

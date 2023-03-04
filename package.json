@@ -1,0 +1,75 @@
+{
+  "name": "activity",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@sentry/browser": "^5.29.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "antd-mobile": "^2.3.4",
+    "html2canvas": "^1.0.0-rc.7",
+    "js-base64": "^3.6.0",
+    "js-cookie": "^2.2.1",
+    "lodash": "^4.17.20",
+    "lottie-web": "^5.10.0",
+    "mobx": "^6.0.4",
+    "mobx-react": "^7.0.5",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
+    "qs": "^6.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.11.0",
+    "react-lazyload": "^3.1.0",
+    "react-masonry-component": "^6.2.1",
+    "react-pullload": "^1.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-wx-images-viewer": "^1.0.6",
+    "swiper": "^6.4.1",
+    "typescript": "^4.0.3",
+    "vconsole": "^3.7.0",
+    "web-vitals": "^0.2.4",
+    "weixin-js-sdk": "^1.6.0"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx src/",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "@types/lodash": "^4.14.165",
+    "@types/qs": "^6.9.5",
+    "@types/react-lazyload": "^3.0.0",
+    "@types/react-router-dom": "^5.1.6",
+    "axios": "^0.21.1",
+    "babel-plugin-import": "^1.13.3",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.1.6"
+  }
+}

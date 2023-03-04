@@ -1,0 +1,93 @@
+@import '~@/assets/styles/mixin';
+
+.prizes {
+  border-radius: rem(32);
+  background: #ffffff;
+  overflow: hidden;
+  .prizesTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: rem(94);
+    border: rem(2) solid #ffffff;
+    padding: rem(42) 0 rem(12);
+    background: linear-gradient(180deg, #ffe4de 0%, #fff6f4 24%, #ffffff 79%);
+    i:first-child {
+      width: rem(122);
+      height: rem(32);
+      background: url(~@/assets/images/bg_prize_title_left.png) 0 0 / 100% 100%
+        no-repeat;
+    }
+    i:last-child {
+      width: rem(122);
+      height: rem(32);
+      background: url(~@/assets/images/bg_prize_title_right.png) 0 0 / 100% 100%
+        no-repeat;
+    }
+    h2 {
+      font-size: rem(34);
+      font-weight: bold;
+      text-align: center;
+      color: #262626;
+      line-height: rem(40);
+      margin: 0 rem(12.16);
+    }
+  }
+  .prizesContent {
+    background: #ffffff;
+    padding: rem(41) rem(28) rem(37);
+    .prizeList {
+      .prizeItem {
+        display: flex;
+        padding: 0 rem(20) 0 rem(12);
+        margin-bottom: rem(40);
+        background: url(~@/assets/images/bg_prize.png) 0 0/100% 100% no-repeat;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .prizeImg {
+          flex: none;
+          width: rem(150);
+          height: rem(150);
+          margin-right: rem(18);
+          margin-top: rem(-30);
+        }
+        .prizeInfo {
+          flex: 1;
+          overflow: hidden;
+          padding: rem(24) 0 rem(16);
+          .prizeName {
+            font-size: rem(30);
+            font-weight: bold;
+            color: #ff2952;
+            line-height: rem(40);
+            margin-bottom: rem(6);
+            @include ellicpsis;
+          }
+          .prizeThreshold {
+            font-size: rem(24);
+            color: #fb788a;
+            line-height: rem(40);
+            @include ellicpsis;
+          }
+        }
+        .prizeButton {
+          flex: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: rem(116);
+          height: rem(52);
+          background: url(~@/assets/images/bg_button_border.png) 0 0/100% 100%
+            no-repeat;
+          font-size: rem(24);
+          font-weight: bold;
+          color: #ff7c48;
+          line-height: rem(33);
+          margin-left: rem(18);
+          margin-top: rem(37);
+        }
+      }
+    }
+  }
+}

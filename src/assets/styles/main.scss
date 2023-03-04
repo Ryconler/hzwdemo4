@@ -1,0 +1,41 @@
+@import './_variable.scss';
+@import './_reset.scss';
+@import './_mixin.scss';
+
+html {
+  touch-action: manipulation;
+}
+body {
+  background: #FFFFFF;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+body, html, #root, #root > div {
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 18px;
+  color: $color-text-base;
+  font-weight: bolder;
+}
+
+h3 {
+  font-size: 16px;
+  color: $color-text-base;
+  font-weight: bolder;
+}
+h4 {
+  font-size: 14px;
+  color: $color-text-base;
+}

@@ -1,0 +1,140 @@
+@import '~@/assets/styles/mixin';
+
+.comments {
+  .commentsTitle {
+    display: flex;
+    align-items: center;
+    padding: rem(28) rem(26) rem(24) rem(84);
+    font-size: rem(34);
+    font-weight: bold;
+    color: #ffffff;
+    line-height: rem(48);
+    background: url(~@/assets/images/icon_dialog.png) rem(26) center/rem(48)
+      rem(48) no-repeat;
+  }
+  .commentList {
+    width: rem(702);
+    margin: 0 auto;
+    .commentItem {
+      width: rem(342);
+      margin-bottom: rem(18);
+      overflow: hidden;
+      .commentImg {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: rem(608); // 16:9
+        border-radius: rem(12) rem(12) 0 0;
+        object-fit: cover;
+      }
+      .commentContent {
+        padding: rem(16) rem(20) rem(20);
+        background: #ffffff;
+        border-radius: 0 0 rem(16) rem(16);
+        .commentTitle {
+          font-size: rem(24);
+          font-weight: bold;
+          color: #121212;
+          line-height: rem(34);
+          margin-bottom: rem(18);
+          @include multiEllipsis;
+        }
+        .commentUser {
+          display: flex;
+          align-items: center;
+          .commentUserAvatar {
+            flex: none;
+            width: rem(36);
+            height: rem(36);
+            border-radius: 50%;
+            margin-right: rem(10);
+          }
+          .commentUserName {
+            flex: 1;
+            font-size: rem(22);
+            color: #666666;
+            line-height: rem(30);
+            @include ellicpsis;
+          }
+          .commentUserLikeIcon {
+            flex: none;
+            width: rem(24);
+            height: rem(21);
+            margin-left: rem(10);
+            margin-right: rem(8);
+            background: url(~@/assets/images/icon_like.png) 0 0/100% 100%
+              no-repeat;
+            &.liked {
+              background: url(~@/assets/images/icon_liked.png) 0 0/100% 100%
+                no-repeat;
+            }
+          }
+          .commentUserLikeNum {
+            flex: none;
+            font-size: rem(22);
+            color: #121212;
+            line-height: rem(30);
+          }
+        }
+      }
+      &.topic {
+        .commentContent {
+          position: relative;
+          margin-top: rem(-44);
+          padding: rem(18) rem(20) rem(20);
+          background: url(~@/assets/images/bg_topic.png) 0 0/100% 100% no-repeat;
+          border-radius: 0 0 rem(16) rem(16);
+          .commentTag {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: rem(112);
+            height: rem(44);
+            background: linear-gradient(90deg, #fa2c18, #fe6931, #ff6730);
+            border-radius: rem(22);
+            font-size: rem(24);
+            font-weight: bold;
+            color: #ffffff;
+            line-height: rem(33);
+            margin-bottom: rem(12);
+          }
+          .commentTitle {
+            font-size: rem(28);
+            font-weight: bold;
+            color: #262626;
+            line-height: rem(34);
+            margin-bottom: rem(8);
+          }
+          .commentUser {
+            display: flex;
+            align-items: center;
+            margin-bottom: rem(14);
+            .commentUserAvatar {
+              flex: none;
+              width: rem(40);
+              height: rem(40);
+              border-radius: 50%;
+              border: rem(2) solid #ffffff;
+              &:not(:last-of-type) {
+                margin-right: rem(-10);
+              }
+            }
+            .commentUserParti {
+              flex: 1;
+              font-size: rem(24);
+              color: #666666;
+              line-height: rem(30);
+              margin-left: rem(10);
+            }
+          }
+          .commentLookButton {
+            width: rem(105);
+            height: rem(40);
+            background: url(~@/assets/images/bg_golook.png) 0 0/100% 100%
+              no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
