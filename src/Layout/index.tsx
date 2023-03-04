@@ -6,7 +6,7 @@ class Layout extends Component {
   render():any {
     return (
       <Suspense fallback={null}>
-        <Router basename="/interaction-activity">
+        <Router>
           <Switch>
             {routes.map((element: any, index) => {
               return (
