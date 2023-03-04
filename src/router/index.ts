@@ -4,7 +4,7 @@ const Heimlich = React.lazy(() => import('../containers/Heimlich'))
 
 const routes = [
   {
-    path: '/',
+    path: '/heimlich',
     component: Heimlich,
   }
 ]
