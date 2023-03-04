@@ -224,50 +224,10 @@ export const getCity = async (params?:any) => {
   cityInfo.cityName = '南京'
   return cityInfo
 }
-//图文分享
-export const share = (config = {}) => {
-  if(isApp()) {
-    const conf = {
-      title: '孩子王互动活动',
-      desc: '孩子王，陪伴妈妈&孩子们一同成长',
-      imgUrl: 'http://st.haiziwang.com/static/life/r/icon_logo.png',
-      link: location.href,
-      // 以下孩子王独有
-      promotion: '', // 促销语
-      imageByte: '', // 如果非空，则作为图片分享，必须是图片二进制/Base64编码
-      kwsharescenetype: '', // 获取分享 key 的 type
-      linkid: '', // 获取分享 key 的 linkid
-      subtext: '', // subtext (sub 文本，价格、价格区间等)
-      label: '', // 标签
-      showQrCode: 0, // 是否显示二维码
-      ...config
-    }
-    console.log(conf)
-    window.getAppShareInfo = () => conf
-  }
-}
 
 // 设置页面标题和是否支持刷新分享
 export const setPageInfo = (title: string, refresh = false, share = false) => {
-  // document.title = title
-  if (window.kwapp) {
-    window.kwapp.onReady(() => {
-      window.kwapp.allowRefreshOrShare(refresh, share)
-    })
-    window.kwapp.setTitle(title)
-    document.title = title
-    window.kwapp.allowRefreshOrShare(refresh, share)
-    setTimeout(() => {
-      window.kwapp.setTitle(title)
-      window.kwapp.allowRefreshOrShare(refresh, share)
-    }, 500)
-  }
-  // const shareObj = {
-  //   userName: 'gh_362b01c44275',
-  //   path: 'http://dev.haiziwang.com:3000',
-  //   mpType: 2, //TODO  0正式版;1开发版;2体验版;
-  // }
-  // window.getAppShareInfo = () => shareObj
+  document.title = title
 }
 
 // 时间戳获取周几
@@ -370,29 +330,6 @@ export const callAppInterface = () => {
     // resaultObj = {type: 1, msg:msg || ''}
     resaultObj = {}
   }
-}
-
-function getLocation() {
-  return new Promise((resolve:any, reject:any) => {
-    wx.getLocation({
-      type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-      success: function (res:any) {
-        // var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
-        // var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
-        // var speed = res.speed; // 速度，以米/每秒计
-        // var accuracy = res.accuracy; // 位置精度
-        // console.log('weixin', res)
-        resolve(res)
-      },
-      fail: (res:any) => {
-        console.log('fail', res)
-        reject(res)
-      },
-      complete: () => {
-        console.log('complete')
-      }
-    })
-  })
 }
 
 // 获取小程序环境
