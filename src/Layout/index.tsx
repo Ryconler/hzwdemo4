@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from 'react'
 import routes from '../router'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 class Layout extends Component {
   render():any {
